@@ -6,6 +6,7 @@
 // speed : speed of animation in miliseconds (500 by default)
 // easing : animation flow, string ("linear" by default)
 // cyclic: should carousel go all the way round or stop after last slide (false by default)
+// shift: step for one animation move in px. depends upon images sizes and num of images you
 
 (function($) {
 
@@ -13,54 +14,70 @@
         var defaults = {
             speed: 500,
             easing: "linear",
-            cyclic: false
+            cyclic: false,
+            shift: 234
         };
 
         var settings = $.extend(defaults, options);
 
         // Necessary DOM elements
         var $this = this;
-        var $wrapper = this.find(".jqcarousel-wrapper");
+        var $wrapper = $this.find(".jqcarousel-wrapper");
         var $left = $this.find(".jqcarousel-drivers").children(":first-child");
         var $right = $this.find(".jqcarousel-drivers").children(":last-child");
 
         // Calculatable values
+        var $images = $(".jqcarousel-wrapper").children().length;
         var $goLeft = 0;
-        var $shift = 234;
+        var $max = defaults.shift * ($images - 3);
 
-        $left.hide();
+        if(!defaults.cyclic) {
+            $left.hide();
+        }
 
         $left.click(function() {
-            $goLeft += $shift;
+            $goLeft += defaults.shift;
             $wrapper.animate({
                 "left" : $goLeft + "px"
-            }, settings.speed,
-               settings.animation
-        );
+                }, settings.speed,
+                   settings.animation
+            );
 
+            // manage breakpoint
             if ($goLeft == 0) {
-                $left.fadeOut();
+                if (!defaults.cyclic) {
+                    $left.fadeOut();
+                }
+                else {
+                    $goLeft = -($max + defaults.shift);
+                }
             }
-            if ($goLeft != $shift * -4) {
+            // show right control as soon as it's not carousel end
+            if ( $goLeft == -($max - defaults.shift) ) {
                 $right.fadeIn();
             }
         });
 
         $right.click(function() {
-            $goLeft -= $shift;
+            $goLeft -= defaults.shift;
             $wrapper.animate({
                 "left" : $goLeft + "px"
-            }, settings.speed,
-               settings.animation
-        );
+                },
+                settings.speed,
+                settings.animation
+            );
 
-            if ($goLeft == $shift * -4) {
-                $right.fadeOut();
+            // manage breakpoint
+            if ($goLeft == -$max) {
+                if (defaults.cyclic) {
+                    $goLeft = 0;
+                }
+                else {
+                    $right.fadeOut();
+                }
             }
-            console.log($goLeft);
-            console.log($goLeft != 0);
-            if ($goLeft != 0) {
-
+            // show left control as soon as it's not the beginning of carousel
+            if ($goLeft == -defaults.shift) {
                 $left.fadeIn();
             }
         });
