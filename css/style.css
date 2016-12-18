@@ -2,20 +2,25 @@ html {
     background-color: #59616d;
 }
 
-.jqcarousel {
-    position: relative;
-    width: 700px;
-    margin: 100px auto;
-    font-family: Arial, sans-serif;
-    overflow: hidden;
-}
-
 h2 {
+    margin-top: 50px;
     color: #f57253;
     text-align: center;
 }
 
-.jqcarousel-wrapper {
+.jqcarousel {
+    position: relative;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.jqcarousel-container {
+    position: relative;
+    width: 700px;
+    margin: 70px auto;
+    overflow: hidden;
+}
+
+.jqcarousel-content {
     width: 10000px;
     position: relative;
 }
@@ -38,9 +43,10 @@ h2 {
     width: 100%;
 }
 
-.jqcarousel-drivers {
-    position: absolute;
-    top: 142px;
+.jqcarousel-controls {
+    position: relative;
+    top: -188px;
+    margin: 0 auto;
     width: 700px;
 }
 
@@ -55,11 +61,13 @@ h2 {
 }
 
 .left {
-    float: left;
+    position: absolute;
+    left: -30px;
 }
 
 .right {
-    float: right;
+    position: absolute;
+    right: -30px;
 }
 
 .boring {
