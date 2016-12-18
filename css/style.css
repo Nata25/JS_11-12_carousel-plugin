@@ -1,0 +1,60 @@
+.jqcarousel {
+    position: relative;
+    width: 700px;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+h2 {
+    color: #b7482e;
+    text-align: center;
+}
+
+.jqcarousel-wrapper {
+    width: 10000px;
+}
+
+.jqcarousel figure {
+    display: inline-block;
+    width: 200px;
+    margin: 0;
+    padding: 14px;
+    border: 1px solid #eee;
+}
+
+.jqcarousel-wrapper figure:first-child {
+    margin-left: 0;
+}
+
+.jqcarousel figcaption {
+    text-align: center;
+}
+
+.jqcarousel img {
+    width: 100%;
+}
+
+.drivers {
+    position: absolute;
+    top: 142px;
+    width: 698px;
+}
+
+.left,
+.right {
+    display: inline-block;
+    padding: 5px;
+    background-color: #b7482e;
+    color: #fff;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
