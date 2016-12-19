@@ -17,7 +17,7 @@
 // ***************
 // speed : speed of animation in miliseconds (500 by default)
 // easing : animation flow, string ("linear" by default)
-// cyclic : should carousel go all the way round or stop after last slide (false by default)
+// cyclic : should carousel go all the way round or stop after last slide (true by default)
 // *** cyclic here means going smoothly to the first slide when at end click right control
 // *** and go to the last slide when at start and click left control
 // shift : step for one animation move in px. if you want to shift 1 img per step, shift = image box size + margins
@@ -28,7 +28,7 @@
         var defaults = {
             speed: 500,
             easing: "linear",
-            cyclic: false,
+            cyclic: true,
             shift: 234
         };
 
@@ -37,11 +37,20 @@
         // Necessary DOM elements
         var $this = this;
         var $wrapper = $this.find(".jqcarousel-content");
+        var $image = $wrapper.children().first();
+        // defaults.shift = $image.width() +
+        //     parseInt($image.css("padding")) * 2 +
+        //     parseInt($image.css("border")) * 2 +
+        //     parseInt($image.css("margin")) * 2;
+        // console.log($image.width());
+        // console.log(parseInt($image.css("padding")));
+        // console.log(defaults.shift);
         var $left = $this.find(".jqcarousel-controls").children(":first-child");
         var $right = $this.find(".jqcarousel-controls").children(":last-child");
 
         // Calculatable values
         var $images = $(".jqcarousel-content").children().length;
+        console.log($images);
         var $goLeft = 0;
         var $max = defaults.shift * ($images - 3);
 

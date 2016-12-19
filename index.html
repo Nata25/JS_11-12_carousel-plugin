@@ -10,62 +10,39 @@
 
         <section class="jqcarousel">
 
-            <h2><span class="boring">Boring</span> Christmas jqery carousel</h2>
+                <script type="text/template" id="NY-carousel">
 
-            <!-- carousel visible area -->
-            <div class="jqcarousel-container">
+                <h2><span class="boring">Boring</span> Christmas jqery carousel</h2>
 
-                <!-- content of carousel -->
-                <div class="jqcarousel-content">
+                <!-- carousel visible area -->
+                <div class="jqcarousel-container">
 
-                    <figure>
-                        <img alt="New year is coming" src="img/ny1.jpg">
-                        <figcaption>Jingle bells...</figcaption>
-                    </figure>
+                    <!-- content of carousel -->
+                    <div class="jqcarousel-content">
 
-                    <figure>
-                        <img alt="New year is coming" src="img/ny2.jpg">
-                        <figcaption>Jingle bells...</figcaption>
-                    </figure>
+                            <% for ( var i = 0; i < data.length; i++ ) { %>
+                                <figure>
+                                    <img alt="<%= data[i].alt %>" src="img/<%= data[i].filename %>" >
+                                    <figcaption><%= data[i].caption %></figcaption>
+                                </figure>
+                            <% } %>
 
-                    <figure>
-                        <img alt="New year is coming" src="img/ny3.jpg">
-                        <figcaption>Jingle all the way...</figcaption>
-                    </figure>
+                    </div> <!-- end of carousel content -->
 
-                    <figure>
-                        <img alt="New year is coming" src="img/ny4.jpg">
-                        <figcaption>What a fun...</figcaption>
-                    </figure>
+                </div> <!-- /end of carousel visible area -->
 
-                    <figure>
-                        <img alt="New year is coming" src="img/ny5.jpg">
-                        <figcaption>It is to ride...</figcaption>
-                    </figure>
+                <div class="jqcarousel-controls">
+                    <span class="left">2016</span>
+                    <span class="right">2017</span>
+                </div>
 
-                    <figure>
-                        <img alt="New year is coming" src="img/ny6.jpg">
-                        <figcaption>In a one horse open...</figcaption>
-                    </figure>
-
-                    <figure>
-                        <img alt="New year is coming" src="img/ny7.jpg">
-                        <figcaption>sle-e-e-eigh!..</figcaption>
-                    </figure>
-
-                </div> <!-- end of carousel content -->
-
-            </div> <!-- /end of carousel visible area -->
-
-            <div class="jqcarousel-controls">
-                <span class="left">2016</span>
-                <span class="right">2017</span>
-            </div>
+            </script>
 
         </section>
 
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-        <script src="js/script.js"></script>
+        <script src="js/mini-template.js"></script>
         <script src="js/jquery.carousel.js"></script>
+        <script src="js/script.js"></script>
     </body>
 </html>
