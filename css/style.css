@@ -111,13 +111,13 @@ img {
 
 .easter {
     width: 600px;
-    border: 5px solid #fff;
+    /*border: 5px solid #fff;*/
     /*box-shadow: 0 0 5px 0 #bbb;*/
 }
 
 .easter__slide {
     display: inline-block;
-    width: 640px;
+    width: 600px;
 }
 
 .arrows {

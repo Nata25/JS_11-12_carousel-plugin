@@ -44,7 +44,9 @@
         var $slides = $wrapper.children();
 
         // Calculatable values
-        var $shift = $container.width() / settings.num;
+        var $shift = Math.floor($container.width() / settings.num);
+        console.log($container.width(), settings.num, $shift);
+        // $shift = 605;
         var $left = $this.find(".jqcarousel-controls").children(":first-child");
         var $right = $this.find(".jqcarousel-controls").children(":last-child");
         var $goLeft = 0;
