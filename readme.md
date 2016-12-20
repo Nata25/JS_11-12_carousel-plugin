@@ -1,9 +1,9 @@
-***************
-Natalya's Ivanova 'awesome' jquery carousel plugin, 2016
-don't try to repeat this in real life
-***************
 
-HOW TO USE
+## Natalya's Ivanova 'awesome' jquery carousel plugin, 2016
+don't try to repeat this in real life
+
+
+## HOW TO USE
 Initialize .jqcarousel() method on the container of your carousel
 Inside the container, put .carousel-frame and .carousel-controls. They should be siblings
 Style .jqcarousel-frame as you like and set its width – that's how wide you carousel will be
@@ -16,9 +16,9 @@ Width of .jqcarousel-content should be really great so that all slides would fit
 Items inside .jqcarousel-content (figures, listitems, images etc.) should have display: inline-block property
 Controls go inside .jqcarousel-controls container; left control should be first-child and right - last-child of the container
 
-***********************
+
 CUSTOMIZE WITH OPTIONS:
-***********************
+
 speed : speed of animation in miliseconds (500 by default)
 easing : animation flow, string ("linear" by default)
 cyclic : should carousel go all the way round or stop after last slide (true by default)
