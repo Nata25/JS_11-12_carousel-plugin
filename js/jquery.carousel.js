@@ -3,7 +3,7 @@
 // don't try to repeat this in real life
 // ***************
 
-// HOW TO USE : check out readme.txt
+// HOW TO USE : check out readme.md
 
 (function($) {
 

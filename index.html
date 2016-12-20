@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>jQuery plugins</title>
+        <title>jQuery Carousel Plugin and JS templates</title>
         <link rel="stylesheet" href="css/style.css">
 
     </head>
@@ -10,9 +10,9 @@
 
         <section class="jqcarousel" id="NY-carousel-container">
 
-                <script type="text/template" id="NY-carousel-template">
+            <script type="text/template" id="NY-carousel-template">
 
-                <h2><span class="boring">Boring</span> Christmas jqery carousel</h2>
+                <h2><span class="boring">Boring</span> Christmas jQuery Carousel</h2>
 
                 <!-- carousel visible area -->
                 <div class="jqcarousel-frame new-year">
@@ -44,30 +44,30 @@
 
         <section class="jqcarousel" id="easter-carousel-container">
 
-            <script type="text/template" id="easter-carousel-template">
+                <script type="text/template" id="easter-carousel-template">
 
-            <h2>Easter Carousel</h2>
+                <h2>Easter Carousel</h2>
 
-            <div class="jqcarousel-frame easter">
-                <div class="jqcarousel-content">
-                    <% var data = easterCarouselContent.data %>
-                    <% for (var i = 0; i < data.length; i++) { %>
-                        <figure class="easter__slide">
-                            <img alt="<%= data[i].alt %>" src="img/<%= data[i].filename %>"></figure>
-                    <% } %>
+                <div class="jqcarousel-frame easter">
+                    <div class="jqcarousel-content">
+                        <% var data = easterCarouselContent.data %>
+                        <% for (var i = 0; i < data.length; i++) { %>
+                            <figure class="easter__slide">
+                                <img alt="<%= data[i].alt %>" src="img/<%= data[i].filename %>"></figure>
+                        <% } %>
+                    </div>
+
+                    <p class="jcarousel-pagination">
+                    </p>
+
                 </div>
 
-                <p class="jcarousel-pagination">
-                </p>
+                <div class="jqcarousel-controls arrows">
+                    <a href="#" class="prev">&lsaquo;</a>
+                    <a href="#" class="next">&rsaquo;</a>
+                </div>
 
-            </div>
-
-            <div class="jqcarousel-controls arrows">
-                <a href="#" class="prev">&lsaquo;</a>
-                <a href="#" class="next">&rsaquo;</a>
-            </div>
-
-        </script>
+            </script>
 
         </section>
 
@@ -76,5 +76,6 @@
         <script src="js/jquery.carousel.js"></script>
         <script src="https://cdn.jsdelivr.net/lodash/4.17.2/lodash.min.js"></script>
         <script src="js/script.js"></script>
+
     </body>
 </html>

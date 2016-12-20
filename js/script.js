@@ -81,7 +81,6 @@ $(function() {
                 filename: "easter7.jpg",
                 alt: "Easter eggs exhibition 2016"
             }
-
         ]
     }
 
@@ -110,8 +109,7 @@ $(function() {
 
     // Initialize carousel plugin on NY marckup
     easterCarousel.jqcarousel({
-        speed: 300,
-        easing: "cubic-bezier(.17,.67,.83,.67)",
+        speed: 500,
         cyclic: true,
         num: 1
     });
