@@ -44,17 +44,17 @@
 
         <section class="jqcarousel" id="easter-carousel-container">
 
+            <script type="text/template" id="easter-carousel-template">
+
             <h2>Easter Carousel</h2>
 
             <div class="jqcarousel-frame easter">
                 <div class="jqcarousel-content">
-                        <figure class="easter__slide"><img alt="Easter eggs exhibition" src="img/easter1.jpg"></figure>
-                        <figure class="easter__slide"><img alt="Easter eggs exhibition" src="img/easter2.jpg"></figure>
-                        <figure class="easter__slide"><img alt="Easter eggs exhibition" src="img/easter3.jpg"></figure>
-                        <figure class="easter__slide"><img alt="Easter eggs exhibition" src="img/easter4.jpg"></figure>
-                        <figure class="easter__slide"><img alt="Easter eggs exhibition" src="img/easter5.jpg"></figure>
-                        <figure class="easter__slide"><img alt="Easter eggs exhibition" src="img/easter6.jpg"></figure>
-                        <figure class="easter__slide"><img alt="Easter eggs exhibition" src="img/easter7.jpg"></figure>
+                    <% var data = easterCarouselContent.data %>
+                    <% for (var i = 0; i < data.length; i++) { %>
+                        <figure class="easter__slide">
+                            <img alt="<%= data[i].alt %>" src="img/<%= data[i].filename %>"></figure>
+                    <% } %>
                 </div>
 
                 <p class="jcarousel-pagination">
@@ -67,11 +67,14 @@
                 <a href="#" class="next">&rsaquo;</a>
             </div>
 
+        </script>
+
         </section>
 
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
         <script src="js/micro-template.js"></script>
         <script src="js/jquery.carousel.js"></script>
+        <script src="https://cdn.jsdelivr.net/lodash/4.17.2/lodash.min.js"></script>
         <script src="js/script.js"></script>
     </body>
 </html>

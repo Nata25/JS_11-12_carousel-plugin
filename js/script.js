@@ -1,6 +1,6 @@
 $(function() {
 
-    var carouselContent = {
+    var NYcarouselContent = {
         data: [
             {
                 filename: "ny1.jpg",
@@ -45,16 +45,52 @@ $(function() {
             }]
     }
 
-    $(".jqcarousel a").click(function(event) {
-        event.preventDefault();
-    });
+    var easterCarouselContent = {
+        data: [
+            {
+                filename: "easter1.jpg",
+                alt: "Easter eggs exhibition 2016"
+            },
+
+            {
+                filename: "easter2.jpg",
+                alt: "Easter eggs exhibition 2016"
+            },
+
+            {
+                filename: "easter3.jpg",
+                alt: "Easter eggs exhibition 2016"
+            },
+
+            {
+                filename: "easter4.jpg",
+                alt: "Easter eggs exhibition 2016"
+            },
+
+            {
+                filename: "easter5.jpg",
+                alt: "Easter eggs exhibition 2016"
+            },
+
+            {
+                filename: "easter6.jpg",
+                alt: "Easter eggs exhibition 2016"
+            },
+
+            {
+                filename: "easter7.jpg",
+                alt: "Easter eggs exhibition 2016"
+            }
+
+        ]
+    }
 
     var nyCarousel = $("#NY-carousel-container");
     var easterCarousel = $("#easter-carousel-container");
 
-    // Render carousel template
+    // Render NY carousel template using John Resig micro-template
     var html = $("#NY-carousel-template").html();
-    var renderedCarousel = tmpl(html, carouselContent);
+    var renderedCarousel = tmpl(html, NYcarouselContent);
     nyCarousel.append(renderedCarousel)
 
     // Initialize carousel plugin on NY template
@@ -62,6 +98,14 @@ $(function() {
         speed: 300,
         easing: "cubic-bezier(.17,.67,.83,.67)",
         cyclic: false
+    });
+
+    // Render Easter carousel template using Lodash
+    var lodash_tmpl = _.template($("#easter-carousel-template").html());
+    easterCarousel.append(lodash_tmpl({easterCarouselContent}));
+
+    $(".jqcarousel a").click(function(event) {
+        event.preventDefault();
     });
 
     // Initialize carousel plugin on NY marckup
