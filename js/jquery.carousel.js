@@ -5,12 +5,13 @@
 
 // HOW TO USE
 // Initialize .jqcarousel() method on the container of your carousel
-// Inside the container, .carousel-container and .carousel-controls. They should be siblings
-// Carousel items go inside .carousel-container and should be wrapped with .jqcarousel-content
-// Width of .jqcarousel-container is how wide you carousel will be.
-// ** It is custom value but is used inside script to identify shift. Define it in .css file and don't mess up with file name.
-// Make sure .jqcarousel-container has overflow property set to hidden
+// Inside the container, put .carousel-frame and .carousel-controls. They should be siblings
+// Style .jqcarousel-frame as you like and set its width – that's how wide you carousel will be
+// ** .jqcarousel-frame's width is a custom value but is used inside script to identify shift.
+// ** Make sure .jqcarousel-frame has overflow property set to hidden
+// Carousel items go inside .carousel-frame and should be wrapped with .jqcarousel-content
 // Width of .jqcarousel-content should be really great so that all slides would fit it (use something like 10000px)
+// Items inside .jqcarousel-content (figures, listitems, images etc.) should have display: inline-block property
 // Controls go inside .jqcarousel-controls container; left control should be first-child and right - last-child of the container
 
 // ***********************
@@ -37,19 +38,19 @@
 
         // Necessary DOM elements
         var $this = this;
-        var $container = $this.find(".jqcarousel-container");
+        var $container = $this.find(".jqcarousel-frame");
         var $wrapper = $this.find(".jqcarousel-content");
         var $image = $wrapper.children().first();
+        var $slides = $wrapper.children();
 
         // Calculatable values
-        var $images = $(".jqcarousel-content").children().length;
-        var $shift = $container.width() / defaults.num;
+        var $shift = $container.width() / settings.num;
         var $left = $this.find(".jqcarousel-controls").children(":first-child");
         var $right = $this.find(".jqcarousel-controls").children(":last-child");
         var $goLeft = 0;
-        var $max = $shift * ($images - 3);
+        var $max = $shift * ($slides.length - settings.num);
 
-        if(!defaults.cyclic) {
+        if(!settings.cyclic) {
             $left.hide();
         }
 
@@ -63,7 +64,7 @@
 
             // manage breakpoint
             if ($goLeft == 0) {
-                if (!defaults.cyclic) {
+                if (!settings.cyclic) {
                     $left.fadeOut();
                 }
                 else {
@@ -87,7 +88,7 @@
 
             // manage breakpoint
             if ($goLeft == -$max) {
-                if (defaults.cyclic) {
+                if (settings.cyclic) {
                     $goLeft = 0;
                 }
                 else {

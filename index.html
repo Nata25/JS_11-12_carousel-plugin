@@ -8,20 +8,20 @@
     </head>
     <body>
 
-        <section class="jqcarousel">
+        <section class="jqcarousel" id="NY-carousel-container">
 
-                <script type="text/template" id="NY-carousel">
+                <script type="text/template" id="NY-carousel-template">
 
                 <h2><span class="boring">Boring</span> Christmas jqery carousel</h2>
 
                 <!-- carousel visible area -->
-                <div class="jqcarousel-container">
+                <div class="jqcarousel-frame new-year">
 
                     <!-- content of carousel -->
                     <div class="jqcarousel-content">
 
                             <% for ( var i = 0; i < data.length; i++ ) { %>
-                                <figure>
+                                <figure class="new-year__slide">
                                     <img alt="<%= data[i].alt %>" src="img/<%= data[i].filename %>" >
                                     <figcaption><%= data[i].caption %></figcaption>
                                 </figure>
@@ -31,13 +31,43 @@
 
                 </div> <!-- /end of carousel visible area -->
 
-                <div class="jqcarousel-controls">
+                <div class="jqcarousel-controls years">
                     <span class="left">2016</span>
                     <span class="right">2017</span>
                 </div>
 
             </script>
 
+        </section>
+
+        <!-- second carousel, uses the same plugin -->
+
+        <section class="jqcarousel" id="easter-carousel-container">
+
+            <h2>Custom Carousel</h2>
+
+            <div class="jqcarousel-frame easter">
+                <div class="jqcarousel-content">
+                    <!-- <div> -->
+                        <figure class="easter__slide"><img alt="A bird" src="img/bird.jpg"></figure>
+                        <figure class="easter__slide"><img alt="An ear, or spica" src="img/ear.jpg"></figure>
+                        <figure class="easter__slide"><img alt="Moon on plain sky" src="img/moon.jpg"></figure>
+                        <figure class="easter__slide"><img alt="Parachute man" src="img/parachute.jpg"></figure>
+                        <figure class="easter__slide"><img alt="Looks like moon crater" src="img/crater.jpg"></figure>
+                        <figure class="easter__slide"><img alt="Urbanistic landscape" src="img/black_and_white.jpg"></figure>
+                    <!-- </div> -->
+                </div>
+
+                <p class="jcarousel-pagination">
+                </p>
+
+            </div>
+
+            <div class="jqcarousel-controls arrows">
+                <a href="#" class="prev">&lsaquo;</a>
+                <a href="#" class="next">&rsaquo;</a>
+            </div>
+            
         </section>
 
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>

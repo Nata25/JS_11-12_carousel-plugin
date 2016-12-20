@@ -45,20 +45,32 @@ $(function() {
             }]
     }
 
+    $(".jqcarousel a").click(function(event) {
+        event.preventDefault();
+    });
 
-    var carousel = $(".jqcarousel");
+    var nyCarousel = $("#NY-carousel-container");
+    var easterCarousel = $("#easter-carousel-container");
+
     // Render carousel template
-    var html = $("#NY-carousel").html();
+    var html = $("#NY-carousel-template").html();
     var renderedCarousel = tmpl(html, carouselContent);
-    carousel.append(renderedCarousel)
+    nyCarousel.append(renderedCarousel)
 
-    // Initialize carousel plugin
-    carousel.jqcarousel({
+    // Initialize carousel plugin on NY template
+    nyCarousel.jqcarousel({
         speed: 300,
         easing: "cubic-bezier(.17,.67,.83,.67)",
         cyclic: false
     });
 
+    // Initialize carousel plugin on NY marckup
+    easterCarousel.jqcarousel({
+        speed: 300,
+        easing: "cubic-bezier(.17,.67,.83,.67)",
+        cyclic: true,
+        num: 1
+    });
 
 
 }); // end of ready
