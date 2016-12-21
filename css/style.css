@@ -153,21 +153,23 @@ h2 {
     right: -50px;
 }
 
-.jcarousel-pagination {
+.jqcarousel-pagination {
     text-align: center;
 }
 
-.jcarousel-pagination a {
+.jqcarousel-pgitem {
     display: inline-block;
-    width: 15px;
-    height: 15px;
+    width: 20px;
+    height: 20px;
     margin: 20px 5px;
     transition: background-color .3s;
     border-radius: 50%;
+    color: #a1a5a9;
     background-color: #fff;
     box-shadow: 0 0 5px 0 #999;
 }
 
-.jcarousel-pagination a.active {
+.jqcarousel-pgitem.active {
+    color: #fff;
     background-color: #9e9c83;
 }
