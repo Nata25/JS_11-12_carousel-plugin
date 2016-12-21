@@ -96,7 +96,8 @@ $(function() {
     nyCarousel.jqcarousel({
         speed: 300,
         cyclic: false,
-        easing: "cubic-bezier(.17,.67,.83,.67)"
+        easing: "cubic-bezier(.17,.67,.83,.67)",
+        pagination: false
     });
 
     // Render Easter carousel template using Lodash
