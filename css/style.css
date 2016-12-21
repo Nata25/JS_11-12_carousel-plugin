@@ -4,7 +4,6 @@
 }
 
 h2 {
-    /*margin-top: 50px;*/
     color: #f57253;
     text-align: center;
 }
@@ -31,8 +30,8 @@ h2 {
 }
 
 .jqcarousel-content {
-    width: 10000px;
     position: relative;
+    width: 10000px;
 }
 
 .new-year__slide {
@@ -77,9 +76,9 @@ h2 {
 .right {
     display: inline-block;
     padding: 5px;
+    border-radius: 3px;
     background-color: #b7482e;
     color: #fff;
-    border-radius: 3px;
     cursor: pointer;
 }
 
@@ -112,15 +111,15 @@ h2 {
 }
 
 .easter__slide {
-    float: left;
     width: 600px;
+    float: left;
 }
 
 .arrows {
-    position: relative;;
+    position: relative;
     top: -220px;
-    margin: 0 auto;
     width: 600px;
+    margin: 0 auto;
 }
 
 .prev,
@@ -164,18 +163,18 @@ h2 {
     margin: 20px 5px;
     transition: background-color .3s;
     border-radius: 50%;
-    color: #a1a5a9;
     background-color: #fff;
+    color: #a1a5a9;
     box-shadow: 0 0 5px 0 #999;
     cursor: pointer;
 }
 
 .jqcarousel-pgitem:hover {
-    color: #fff;
     background-color: #e8cba5;
+    color: #eee;
 }
 
 .jqcarousel-pgitem.active {
-    color: #fff;
     background-color: #9e9c83;
+    color: #fff;
 }
