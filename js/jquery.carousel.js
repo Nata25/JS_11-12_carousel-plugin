@@ -51,32 +51,43 @@
             $(".jqcarousel-pgitem").first().addClass("active");
         }
 
-        // Event handlers
+        // Event handler: Left arrow
         $left.click(function() {
-            // manage breakpoint
-            if ($goLeft != 0) {
-                $goLeft += $shift;
-            }
-            else {
-                // hide left control
-                if (!settings.cyclic) {
-                    $left.fadeOut();
-                }
-                //
-                else {
-                    $goLeft = -$max;
-                    $(".jqcarousel-pgitem:last-child").addClass("active");
-                }
-                // else {
-                //     $goLeft = -($max + $shift);
-                //     console.log($goLeft);
-                //     $(".jqcarousel-pgitem:last-child").addClass("active");
-                // }
+
+            // prepare for pagination
+            var currentlyActive;
+            if (settings.pagination) {
+                currentlyActive = $(".jqcarousel-pgitem.active").first();
+                currentlyActive.removeClass("active");
             }
 
-            // show right control as soon as it's not carousel end
-            if ( $goLeft == -($max - $shift) ) {
-                $right.fadeIn();
+            // default behaviour
+            $goLeft += $shift;
+            if (currentlyActive) {
+                currentlyActive.prev().addClass("active");
+            }
+
+            // manage breakpoint
+            if (settings.cyclic) {
+                if ($goLeft > 0) {
+                    $goLeft = -$max;
+                    // if pagination is enabled
+                    if (currentlyActive) {
+                        currentlyActive.removeClass("active");
+                        $(".jqcarousel-pgitem:last-child").addClass("active");
+                    }
+                }
+            }
+            // if not cyclic
+            else {
+                // hide left control as soon as it's beginning
+                if ($goLeft == 0) {
+                    $left.fadeOut();
+                }
+                // show right control as soon as it's not the end
+                else if ($goLeft == - ($max - $shift) ) {
+                    $right.fadeIn();
+                }
             }
 
             // slide left!
@@ -86,46 +97,41 @@
                    settings.animation
             );
 
-            if (settings.pagination) {
-                var currentlyActive = $(".jqcarousel-pgitem.active").first();
-                currentlyActive.removeClass("active");
-                currentlyActive.prev().addClass("active");
-            }
-
         });
 
+        // Event haldler: right arrow
         $right.click(function() {
-            var currentlyActive;
 
+            var currentlyActive;
             if (settings.pagination) {
                 currentlyActive = $(".jqcarousel-pgitem.active").first();
                 currentlyActive.removeClass("active");
             }
 
+            // default behaviour
+            $goLeft -= $shift;
+            if (currentlyActive) {
+                currentlyActive.next().addClass("active");
+            }
+
             // manage breakpoint
-            if ($goLeft == -$max) {
-                if (settings.cyclic) {
-                    console.log("breakpoint");
+            if (settings.cyclic) {
+                if ($goLeft == -$max - $shift) {
                     $goLeft = 0;
                     if (currentlyActive) {
                         $(".jqcarousel-pgitem:first-child").addClass("active");
                     }
                 }
-                // hide right control
-                else {
-                    $right.fadeOut();
-                }
             }
             else {
-                $goLeft -= $shift;
-                if (currentlyActive) {
-                    currentlyActive.next().addClass("active");
+                // hide right control
+                if ($goLeft == -$max) {
+                    $right.fadeOut();
                 }
-            }
-
-            // show left control as soon as it's not the beginning of carousel
-            if ($goLeft == -$shift) {
-                $left.fadeIn();
+                // show left control as soon as it's not the beginning of carousel
+                else if ($goLeft == -$shift) {
+                    $left.fadeIn();
+                }
             }
 
             // slide right!

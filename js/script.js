@@ -95,8 +95,8 @@ $(function() {
     // Initialize carousel plugin on NY template
     nyCarousel.jqcarousel({
         speed: 300,
-        easing: "cubic-bezier(.17,.67,.83,.67)",
-        cyclic: false
+        cyclic: false,
+        easing: "cubic-bezier(.17,.67,.83,.67)"
     });
 
     // Render Easter carousel template using Lodash
@@ -110,7 +110,6 @@ $(function() {
     // Initialize carousel plugin on NY marckup
     easterCarousel.jqcarousel({
         speed: 500,
-        cyclic: true,
         num: 1
     });
 
