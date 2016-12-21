@@ -11,9 +11,9 @@
         var defaults = {
             speed: 500,
             easing: "linear",
-            cyclic: true,
+            cyclic: false,
             num: 3,
-            pagination: "digits"
+            pagination: "plain"
         };
 
         var settings = $.extend(defaults, options);
@@ -103,7 +103,7 @@
 
             // slide left!
             $wrapper.animate({
-                "left" : $goLeft + "px"
+                "left": $goLeft + "px"
                 }, settings.speed,
                    settings.animation
             );
@@ -145,7 +145,7 @@
 
             // slide right!
             $wrapper.animate({
-                "left" : $goLeft + "px"
+                "left": $goLeft + "px"
                 },
                 settings.speed,
                 settings.animation

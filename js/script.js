@@ -95,7 +95,6 @@ $(function() {
     // Initialize carousel plugin on NY template
     nyCarousel.jqcarousel({
         speed: 300,
-        cyclic: false,
         easing: "cubic-bezier(.17,.67,.83,.67)",
         pagination: false
     });
@@ -111,7 +110,9 @@ $(function() {
     // Initialize carousel plugin on NY marckup
     easterCarousel.jqcarousel({
         speed: 500,
-        num: 1
+        cyclic: true,
+        num: 1,
+        pagination: "digits"
     });
 
 
