@@ -167,6 +167,12 @@ h2 {
     color: #a1a5a9;
     background-color: #fff;
     box-shadow: 0 0 5px 0 #999;
+    cursor: pointer;
+}
+
+.jqcarousel-pgitem:hover {
+    color: #fff;
+    background-color: #e8cba5;
 }
 
 .jqcarousel-pgitem.active {

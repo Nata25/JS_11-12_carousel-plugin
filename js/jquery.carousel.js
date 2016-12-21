@@ -48,32 +48,43 @@
                     $pagination.find(":nth-child(" + (i+1) + ")").html(i+1);
                 }
             }
+
             $(".jqcarousel-pgitem").first().addClass("active");
+
+            // event handler
+
+            $(".jqcarousel-pgitem").click(function() {
+                var $this = $(this);
+                var ind = $(this).index();
+                $goLeft = (ind) * -$shift;
+                $wrapper.animate({
+                    "left" : $goLeft + "px"
+                    }, settings.speed,
+                       settings.animation
+                );
+                $(".jqcarousel-pgitem.active").first().removeClass("active");
+                $(this).addClass("active");
+            });
         }
 
         // Event handler: Left arrow
         $left.click(function() {
 
-            // prepare for pagination
-            var currentlyActive;
-            if (settings.pagination) {
-                currentlyActive = $(".jqcarousel-pgitem.active").first();
-                currentlyActive.removeClass("active");
-            }
-
             // default behaviour
             $goLeft += $shift;
-            if (currentlyActive) {
-                currentlyActive.prev().addClass("active");
+
+            if (settings.pagination) {
+                $(".jqcarousel-pgitem.active").first()
+                        .removeClass("active")
+                        .prev().addClass("active");
             }
 
             // manage breakpoint
             if (settings.cyclic) {
                 if ($goLeft > 0) {
                     $goLeft = -$max;
-                    // if pagination is enabled
-                    if (currentlyActive) {
-                        currentlyActive.removeClass("active");
+
+                    if (settings.pagination) {
                         $(".jqcarousel-pgitem:last-child").addClass("active");
                     }
                 }
@@ -102,23 +113,21 @@
         // Event haldler: right arrow
         $right.click(function() {
 
-            var currentlyActive;
-            if (settings.pagination) {
-                currentlyActive = $(".jqcarousel-pgitem.active").first();
-                currentlyActive.removeClass("active");
-            }
-
             // default behaviour
             $goLeft -= $shift;
-            if (currentlyActive) {
-                currentlyActive.next().addClass("active");
+
+            if (settings.pagination) {
+                $(".jqcarousel-pgitem.active").first()
+                        .removeClass("active")
+                        .next().addClass("active");
             }
 
             // manage breakpoint
             if (settings.cyclic) {
                 if ($goLeft == -$max - $shift) {
                     $goLeft = 0;
-                    if (currentlyActive) {
+
+                    if (settings.pagination) {
                         $(".jqcarousel-pgitem:first-child").addClass("active");
                     }
                 }
@@ -143,7 +152,7 @@
             );
         });
 
-        return this;
+        return $(this);
     }
 
 })(jQuery);
