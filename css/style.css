@@ -16,7 +16,7 @@ h2 {
 .jqcarousel:first-child {
     height: 600px;
     padding-top: 80px;
-    background-color: #59616d;
+    background-color: #5b596d;
 }
 
 .jqcarousel-frame {
@@ -26,7 +26,7 @@ h2 {
 }
 
 .new-year {
-    width: 705px;
+    width: 821px;
 }
 
 .jqcarousel-content {
@@ -36,7 +36,7 @@ h2 {
 
 .new-year__slide {
     display: inline-block;
-    width: 210px;
+    width: 250px;
     margin: 0 5px;
     padding: 4px;
     border: 1px solid #9c8568;
@@ -68,7 +68,7 @@ h2 {
 }
 
 .years {
-    top: -115px;
+    top: -123px;
     width: 740px;
 }
 
@@ -89,7 +89,7 @@ h2 {
 
 .right {
     position: absolute;
-    right: -35px;
+    right: -54px;
 }
 
 .boring {
