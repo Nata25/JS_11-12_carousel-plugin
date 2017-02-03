@@ -41,4 +41,4 @@ HTML5, CSS3, JS & jQuery and two templating techniques, one per each carousel ex
 - [John Resig's micro-templating](http://ejohn.org/blog/javascript-micro-templating/) 
 - [LoDash _.template()](https://lodash.com/docs/4.17.4#template) function.
 
-[Open on .github.io](https://nata25.github.io/JS_11-12_carousel/).
+[Open on .github.io](https://nata25.github.io/JS_11-12_carousel-plugin/).
