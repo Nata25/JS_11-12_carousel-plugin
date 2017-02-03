@@ -1,6 +1,6 @@
 
 ## JQUERY CAROUSEL SIMPLE PLUGIN
-don't try to repeat this in real life
+Light jQuery plugin to build «smart» non-cyclic carousel which hides inactive inputs.  
 
 ## Quick review
 
