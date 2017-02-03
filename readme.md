@@ -1,10 +1,11 @@
 
 ## JQUERY CAROUSEL SIMPLE PLUGIN
+
 Light jQuery plugin to build «smart» non-cyclic carousel which hides inactive inputs.  
 
 ## Quick review
 
-Display optional number of slides at once. Add pagination on demand, with numbers or without. Choose between cyclic and non-cyclic modes. By default, the carousel is non-cyclic and left/right controls are dynamically hidden on breakpoints. With `cyclic` mode set to `true`, carousel changes direction to reach the first or the last slide depending on where we currently are.
+Display optional number of slides at once. Add pagination on demand, with numbers or without. Choose between cyclic and non-cyclic modes. By default, the carousel is non-cyclic and left/right controls are dynamically hidden on breakpoints. With `cyclic` mode set to `true`, carousel changes direction to reach the first or the last slide depending on where we currently are. Both options are present in demo, with two variants of carousel.
 
 ## How to use
 
@@ -33,5 +34,11 @@ If you want pagination, put `.jqcarousel-pagination` element next to controls co
 - `num` : a number of slides to be shown in the carousel at once (`3` by default)
 
 - `pagination` mode : by default is `"plain"` (pagination items are generated and ready to get `.active` class, but without digits); can also be set to `"digits"` or `false`
+
+## Technologies used:
+
+HTML5, CSS3, JS & jQuery and two templating techniques, one per each carousel example:
+- [John Resig's micro-templating](http://ejohn.org/blog/javascript-micro-templating/) 
+- [LoDash _.template()](https://lodash.com/docs/4.17.4#template) function.
 
 [Open on .github.io](https://nata25.github.io/JS_11-12_carousel/).
