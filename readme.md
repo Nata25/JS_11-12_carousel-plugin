@@ -33,3 +33,5 @@ If you want pagination, put `.jqcarousel-pagination` element next to controls co
 - `num` : a number of slides to be shown in the carousel at once (`3` by default)
 
 - `pagination` mode : by default is `"plain"` (pagination items are generated and ready to get `.active` class, but without digits); can also be set to `"digits"` or `false`
+
+[Open on .github.io](https://nata25.github.io/JS_11-12_carousel/).
